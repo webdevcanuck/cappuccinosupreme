@@ -1,0 +1,342 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cappuccino Supreme</title>
+    <style>
+        body {
+            width: 1920px;
+            height: 1080px;
+            padding: 0;
+            margin: 0;
+            font-family: Tahoma,Arial;
+            font-size: 24pt;		
+        }
+
+        .col-l {
+            position: absolute;
+            width: 960px;
+            height: 1080px;
+            left: 0;
+        }
+
+        .col-r {
+            position: absolute;
+            width: 960px;
+            height: 1080px;
+            left: 960px;
+        }
+
+        #slide {
+            width: 1920px;
+            height: 1080px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .slide {
+            position: absolute;
+            width: 960px;
+            height: 980px;
+            top: 100px;
+            left: 0;
+            text-align: center;
+            display: none;
+        }
+
+        .slide4bg {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bfd255+0,8eb92a+50,72aa00+51,9ecb2d+100;Green+Gloss */
+background: rgb(191,210,85); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(191,210,85,1) 0%, rgba(142,185,42,1) 50%, rgba(114,170,0,1) 51%, rgba(158,203,45,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 51%,rgba(158,203,45,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(191,210,85,1) 0%,rgba(142,185,42,1) 50%,rgba(114,170,0,1) 51%,rgba(158,203,45,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfd255', endColorstr='#9ecb2d',GradientType=0 ); /* IE6-9 */
+        }
+
+        .slide2bg {
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3b679e+0,2b88d9+50,207cca+51,7db9e8+100;Blue+Gloss+%232 */
+            background: rgb(59, 103, 158);
+            /* Old browsers */
+            background: -moz-linear-gradient(top, rgba(59, 103, 158, 1) 0%, rgba(43, 136, 217, 1) 50%, rgba(32, 124, 202, 1) 51%, rgba(125, 185, 232, 1) 100%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(59, 103, 158, 1) 0%, rgba(43, 136, 217, 1) 50%, rgba(32, 124, 202, 1) 51%, rgba(125, 185, 232, 1) 100%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(59, 103, 158, 1) 0%, rgba(43, 136, 217, 1) 50%, rgba(32, 124, 202, 1) 51%, rgba(125, 185, 232, 1) 100%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8', GradientType=0);
+            /* IE6-9 */
+        }
+
+        .slide3bg {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cb60b3+0,c146a1+50,a80077+51,db36a4+100;Pink+Gloss */
+background: rgb(203,96,179); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(203,96,179,1) 0%, rgba(193,70,161,1) 50%, rgba(168,0,119,1) 51%, rgba(219,54,164,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(203,96,179,1) 0%,rgba(193,70,161,1) 50%,rgba(168,0,119,1) 51%,rgba(219,54,164,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(203,96,179,1) 0%,rgba(193,70,161,1) 50%,rgba(168,0,119,1) 51%,rgba(219,54,164,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#db36a4',GradientType=0 ); /* IE6-9 */
+
+        }
+
+        .slide1bg {
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#959595+0,0d0d0d+46,010101+50,0a0a0a+53,4e4e4e+76,383838+87,1b1b1b+100;Black+Gloss+Pipe */
+            background: #959595;
+            /* Old browsers */
+            background: -moz-linear-gradient(top, #959595 0%, #0d0d0d 46%, #010101 50%, #0a0a0a 53%, #4e4e4e 76%, #383838 87%, #1b1b1b 100%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, #959595 0%, #0d0d0d 46%, #010101 50%, #0a0a0a 53%, #4e4e4e 76%, #383838 87%, #1b1b1b 100%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, #959595 0%, #0d0d0d 46%, #010101 50%, #0a0a0a 53%, #4e4e4e 76%, #383838 87%, #1b1b1b 100%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b1b1b', GradientType=0);
+            /* IE6-9 */
+        }
+
+        .txtbg {
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fceabb+0,fccd4d+50,f8b500+51,fbdf93+100;Orange+3D+%235 */
+            background: #fceabb;
+            /* Old browsers */
+            background: -moz-linear-gradient(top, #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 100%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 100%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 100%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#fbdf93', GradientType=0);
+            /* IE6-9 */
+            color: #000;
+            font-weight: bold;
+            -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
+        }
+
+        .msg {
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a06d3a+0,3e1f00+100 */
+background: rgb(160,109,58); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(160,109,58,1) 0%, rgba(62,31,0,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(160,109,58,1) 0%,rgba(62,31,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(160,109,58,1) 0%,rgba(62,31,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a06d3a', endColorstr='#3e1f00',GradientType=0 ); /* IE6-9 */
+text-shadow: 2px 2px 2px rgba(50, 50, 50, 1);
+        }
+
+        h1 {
+            font-size: 42pt;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .txtbg {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body style="opacity:0">
+    <div id="main" style="width:1920px; height:1080px; position:relative; overflow:hidden">
+        <img src="supremecappuccino.png" style="position:absolute; left:50%; top:20px; margin-left:-250px; width:500px; z-index:9999999" />
+        <div class="msg" style="position:absolute; bottom:0; padding:20px; width:100%; color:#FFF; text-align:center; font-size:60px; z-index:9999999999; font-weight:bold">
+            ENJOY GREAT CAPPUCCINO... WIN GREAT PRIZES!
+        </div>
+        <div id="slide">
+            <div class="col-l">
+                <div class="slide slide1">
+                    <img src="ipad.png" style="height:800px" />
+                    <div class="txtbg" style="z-index:9; position:absolute; top:700px; left:240px; width:480px; padding:20px; border-radius:10px; text-align:center">
+                        <h1>
+                        40,000 POINTS
+                      </h1>
+                        <h2>
+                        Can redeem for cash equivalent of $400
+                      </h2>
+                    </div>
+                </div>
+                <div class="slide slide2">
+                    <img src="ps4pro.png" style="height:800px" />
+                    <div class="txtbg" style="z-index:9; position:absolute; top:700px; left:240px; width:480px; padding:20px; border-radius:10px; text-align:center">
+                        <h1>
+                        50,000 POINTS
+                      </h1>
+                        <h2>
+                        Can redeem for cash equivalent of $400
+                      </h2>
+                    </div>
+                </div>
+                <div class="slide slide3">
+                    <img src="laptop.png" style="height:700px" />
+                    <div class="txtbg" style="z-index:9; position:absolute; top:700px; left:240px; width:480px; padding:20px; border-radius:10px; text-align:center">
+                        <h1>
+                        50,000 POINTS
+                      </h1>
+                        <h2>
+                        Can redeem for cash equivalent of $500
+                      </h2>
+                    </div>
+                </div>
+                <div class="slide slide4">
+                    <img src="watch.png" style="height:650px" />
+                    <div class="txtbg" style="z-index:9; position:absolute; top:700px; left:240px; width:480px; padding:20px; border-radius:10px; text-align:center">
+                        <h1>
+                        40,000 POINTS
+                      </h1>
+                        <h2>
+                        Can redeem for cash equivalent of $400
+                      </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-r">
+                <div class="slide slide1">
+                    <img src="tv.png" style="height:700px" />
+                    <div class="txtbg" style="z-index:9; position:absolute; top:700px; left:240px; width:480px; padding:20px; border-radius:10px; text-align:center">
+                        <h1>
+                        160,000 POINTS
+                      </h1>
+                        <h2>
+                        Can redeem for cash equivalent of $1600                      </h2>
+                    </div>
+                </div>
+                <div class="slide slide2">
+                    <img src="bbd.png" style="height:800px" />
+                    <div class="txtbg" style="z-index:9; position:absolute; top:700px; left:240px; width:480px; padding:20px; border-radius:10px; text-align:center">
+                        <h1>
+                        25,000 POINTS
+                      </h1>
+                        <h2>
+                        Can redeem for cash equivalent of $250
+                      </h2>
+                    </div>
+                </div>
+                <div class="slide slide3">
+                    <img src="xboxones.png" style="height:800px" />
+                    <div class="txtbg" style="z-index:9; position:absolute; top:700px; left:240px; width:480px; padding:20px; border-radius:10px; text-align:center">
+                        <h1>
+                        40,000 POINTS
+                      </h1>
+                        <h2>
+                        Can redeem for cash equivalent of $400
+                      </h2>
+                    </div>
+                </div>
+                <div class="slide slide4">
+                    <img src="camera.png" style="height:650px" />
+                    <div class="txtbg" style="z-index:9; position:absolute; top:700px; left:240px; width:480px; padding:20px; border-radius:10px; text-align:center">
+                        <h1>
+                        55,000 POINTS
+                      </h1>
+                        <h2>
+                        Can redeem for cash equivalent of $550
+                      </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display:none">
+
+    </div>
+
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(window).load(function() {
+
+                slideAR = [
+                    ["slide1bg", ".col-l .slide.slide1", ".col-r .slide.slide1"],
+                    ["slide2bg", ".col-l .slide.slide2", ".col-r .slide.slide2"],
+                    ["slide3bg", ".col-l .slide.slide3", ".col-r .slide.slide3"],
+                    ["slide4bg", ".col-l .slide.slide4", ".col-r .slide.slide4"]
+                ];
+
+                console.log(slideAR);
+
+                setTimeout(function() {
+                    $("body").css("opacity", 1);
+                    setSlides();
+                }, 1000);
+
+                slideCount = 0;
+
+                function setSlides() {
+                    console.log(slideAR[slideCount][0]);
+                    $("#slide").attr("class", "");
+                    $("#slide").addClass(slideAR[slideCount][0]);
+                    $(slideAR[slideCount][1]).show();
+                    $(slideAR[slideCount][2]).show();
+                    aniL($(slideAR[slideCount][1]));
+                    aniR($(slideAR[slideCount][2]));
+                    slideCount++;
+                    if (slideCount === slideAR.length) {
+                        slideCount = 0;
+                    };
+                }
+
+                function txtIn() {
+                    len = 1;
+                    $(".txtbg").animate({
+                        opacity: 1
+                    }, 1000, function() {
+                        setTimeout(function() {
+                            if (len == $(".slide").length) {
+                                $(".slide").fadeOut(250);
+                                $(".txtbg").css("opacity", 0);
+                                setSlides();
+                            }
+                            len++;
+                        }, 4000);
+                    });
+                }
+
+                count = 0;
+
+                function slideComplete() {
+                    count++;
+                    if (count === 2) {
+                        txtIn();
+                        count = 0;
+                    }
+                }
+
+                function aniL(ths) {
+                    thsW = $(ths).width();
+                    thsH = $(ths).height();
+                    $(ths).css("left", -thsW + "px");
+                    $(ths).animate({
+                        left: 480 - (thsW / 2)
+                    }, {
+                        duration: 2000,
+                        easing: 'easeOutBounce',
+                        complete: slideComplete
+                    })
+                }
+
+                function aniR(ths) {
+                    thsW = $(ths).width();
+                    thsH = $(ths).height();
+                    $(ths).css("left", thsW + "px");
+                    $(ths).animate({
+                        left: 480 - (thsW / 2)
+                    }, {
+                        duration: 2000,
+                        easing: 'easeOutBounce',
+                        complete: slideComplete
+                    });
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>
